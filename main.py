@@ -28,7 +28,7 @@ client = commands.Bot(command_prefix=get_prefix, description='BEST STATISTICS.')
 # load cogs
 extensions = ['cogs.error_handler',
               'cogs.owner',
-              'cogs.psat']
+              'cogs.score']
 
 # checks for owner perms
 def ownerPerms(ctx):
