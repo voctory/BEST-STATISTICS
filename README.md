@@ -1,4 +1,4 @@
 ## MORE COMING SOON
-BEST YOU BELIEVE IT, SON.
+Best you believe it, son.
 
-[CLICK THIS TO INVITE THE BOT](https://voctory.github.io/best-statistics)
+**[CLICK THIS TO INVITE THE BOT](https://beststatistics.xyz/invite)**
