@@ -1,6 +1,0 @@
-{
-  "discord": "TOKEN",
-
-  "prefix": "q!",
-  "owners": ["owner_id_here"]
-}
