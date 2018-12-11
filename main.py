@@ -23,11 +23,10 @@ def get_prefix(bot, message):
     return commands.when_mentioned_or(*prefixes)(bot, message)
 
 # set prefix
-client = commands.Bot(command_prefix=get_prefix, description='Quizset.')
+client = commands.Bot(command_prefix=get_prefix, description='BEST STATISTICS.')
 
 # load cogs
-extensions = ['cogs.help',
-              'cogs.error_handler',
+extensions = ['cogs.error_handler',
               'cogs.owner',
               'cogs.psat']
 

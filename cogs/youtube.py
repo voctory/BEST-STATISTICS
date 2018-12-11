@@ -13,7 +13,7 @@ class PSAT:
     def __init__(self, client):
         self.client = client
 
-    @commands.command(name='psat', aliases=["PSAT"], pass_context=True)
+    @commands.command(name='pewdiepie', aliases=["pewd", "pewds"], pass_context=True)
     async def psat(self, ctx):
 
         if len(ctx.message.mentions) == 0:
