@@ -10,8 +10,8 @@ import random
 import math
 
 score_val = {
-    "PSAT": { "values": [320, 1520], "thumbnail": "https://i.imgur.com/N4rTVUh.jpg" },
-    "IQ": [50, 160]
+    "PSAT": { "values": [320, 1520], "thumbnail": "https://i.imgur.com/N4rTVUh.jpg"},
+    "IQ": { "values": [50, 160], "thumbnail": "https://i.imgur.com/5KXh7kE.jpg?1"}
 }
 
 class scores:
@@ -20,14 +20,13 @@ class scores:
 
     @commands.command(name='psat', aliases=["PSAT"], pass_context=True)
     async def psat(self, ctx):
+        if len(ctx.message.mentions) == 0: await ctx.send("", embed = workflow(ctx.message.author.id, "PSAT"))
+        else: await ctx.send("", embed = workflow(ctx.message.mentions[0].id, "PSAT"))
 
-        if len(ctx.message.mentions) == 0:
-            # send score
-            await ctx.send("", embed = workflow(ctx.message.author.id, "PSAT"))
-
-        else:
-            # take id of the first user
-            await ctx.send("", embed = workflow(ctx.message.mentions[0].id, "PSAT"))
+    @commands.command(name='iq', aliases=["IQ"], pass_context=True)
+    async def iq(self, ctx):
+        if len(ctx.message.mentions) == 0: await ctx.send("", embed = workflow(ctx.message.author.id, "IQ"))
+        else: await ctx.send("", embed = workflow(ctx.message.mentions[0].id, "IQ"))
 
 
 # streamlined <o/
@@ -42,13 +41,17 @@ def user_new(user_id, type):
 
     # adding new dict if user isn't already there
     if str(user_id) not in list(sets):
-        sets[str(user_id)] = int(math.ceil(random.randint(score_val[type]["values"][0], score_val[type]["values"][1]) / 10.0)) * 10
+        sets[str(user_id)] = score_eq(type)
         with open(f'data/{type}.json', 'w') as file:
             file.write(json.dumps(sets))
     else:
         # user was in!
         return
 
+# special use cases, looking to implement with score_val later
+def score_eq(type) :
+    if type == "PSAT": return int(math.ceil(random.randint(score_val[type]["values"][0], score_val[type]["values"][1]) / 10.0)) * 10
+    else: return random.randint(score_val[type]["values"][0], score_val[type]["values"][1])
 
 # retrieve top secret scores
 def get_score(user_id, type):

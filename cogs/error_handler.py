@@ -64,7 +64,7 @@ class CommandErrorHandler:
         traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
 
     """Below is an example of a Local Error Handler for our command do_repeat"""
-    @commands.command(name='repeat', aliases=['mimic', 'copy'])
+    @commands.command(name='repeat', aliases=['mimic', 'copy'], hidden=True)
     async def do_repeat(self, ctx, *, inp: str):
         """A simple command which repeats your input!
         inp  : The input to be repeated"""

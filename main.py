@@ -37,7 +37,7 @@ def ownerPerms(ctx):
 # triggered when bot is logged in
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game(name='BESTSTATISTICS.XYZ', type=1, url='https://twitch.tv/kraken'))
+    await client.change_presence(activity=discord.Game(name='beststatistics.xyz', type=1, url='https://twitch.tv/kraken'))
     print('Bot online.')
 
 
