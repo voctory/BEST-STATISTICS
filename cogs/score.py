@@ -42,7 +42,7 @@ def user_new(user_id, type):
 
     # adding new dict if user isn't already there
     if str(user_id) not in list(sets):
-        sets[str(user_id)] = int(math.ceil(random.randint(score_val[type]["value"][0], score_val[type]["value"][1]) / 10.0)) * 10
+        sets[str(user_id)] = int(math.ceil(random.randint(score_val[type]["values"][0], score_val[type]["values"][1]) / 10.0)) * 10
         with open(f'data/{type}.json', 'w') as file:
             file.write(json.dumps(sets))
     else:
